@@ -1,0 +1,25 @@
+# .htaccess
+# Auto-routing for production deployment (Apache/Shared Hosting)
+# Allows git push/pull without changing any folder structure.
+
+RewriteEngine On
+RewriteBase /
+
+# 1. Secure config files and env files
+RewriteRule ^backend/config/.*$ - [F,L]
+RewriteRule ^\.git/.*$ - [F,L]
+RewriteRule ^\.env$ - [F,L]
+
+# 2. Allow API requests to go directly to backend/api without rewriting
+RewriteRule ^backend/api/ - [L]
+
+# 3. Route root domain directly to frontend/index.html
+RewriteRule ^$ frontend/index.html [L]
+
+# 4. If request matches a file or folder inside frontend, serve it
+RewriteCond %{DOCUMENT_ROOT}/frontend/$1 -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/frontend/$1 -d
+RewriteRule ^(.*)$ frontend/$1 [L]
+
+# 5. Fallback: if not found, send to 404
+# (Optional: redirect to index.html or fallback results page)
