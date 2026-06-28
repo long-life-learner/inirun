@@ -55,8 +55,8 @@ $stmt = $pdo->prepare(
     "WITH ranked_results AS (
       SELECT bib, name, category, gender, age_group,
              gun_time, net_time, pace,
-             ROW_NUMBER() OVER (ORDER BY gun_time ASC, net_time ASC) AS rank_overall,
-             ROW_NUMBER() OVER (PARTITION BY category, gender ORDER BY gun_time ASC, net_time ASC) AS rank_category_gender,
+             ROW_NUMBER() OVER (ORDER BY CASE WHEN gun_time = '00:00:00' THEN 1 ELSE 0 END ASC, gun_time ASC, net_time ASC) AS rank_overall,
+             ROW_NUMBER() OVER (PARTITION BY category, gender ORDER BY CASE WHEN gun_time = '00:00:00' THEN 1 ELSE 0 END ASC, gun_time ASC, net_time ASC) AS rank_category_gender,
              city, photo_url, checkpoint
       FROM inirun_results
      )
