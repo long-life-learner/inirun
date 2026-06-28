@@ -1,0 +1,8 @@
+bib,name,category,gender,age_group,gun_time,net_time,pace,rank_overall,rank_category_gender,city,photo_url,checkpoint
+1001,Budi Santoso,5K,Putra,18-29,00:16:32,00:16:30,03:18,1,1,Jakarta,,00:08:15
+1002,Agus Wijaya,5K,Putra,18-29,00:17:45,00:17:40,03:32,2,2,Bandung,,00:08:48
+1003,Rian Hidayat,5K,Putra,30-39,00:18:12,00:18:10,03:38,3,3,Bekasi,,00:09:05
+2001,Siti Aminah,5K,Putri,18-29,00:19:22,00:19:20,03:52,10,1,Surabaya,,00:09:40
+2002,Dewi Lestari,5K,Putri,30-39,00:20:45,00:20:42,04:08,15,2,Tangerang,,00:10:15
+3001,John Doe,10K,Putra,Open,00:36:12,00:36:10,03:37,4,1,Jakarta,,00:18:05
+4001,Jane Doe,Half Marathon,Putri,Open,01:25:30,01:25:25,04:02,8,1,Bekasi,,00:42:30
